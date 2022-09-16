@@ -1,21 +1,23 @@
 import "./App.css";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Home, Product, Purchases, Login, SignUp } from "./pages";
+import { Container } from "react-bootstrap";
+import { LoadingScreen } from "./components";
 
 function App() {
   return (
     <HashRouter>
-      {/* Rutas privadas */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/cart" element={<Purchases />} />
+      <Container>
+        <LoadingScreen />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/cart" element={<Purchases />} />
 
-        {/* Rutas Publicas */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </Container>
     </HashRouter>
   );
 }
