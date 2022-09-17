@@ -20,4 +20,8 @@ Para tener un proyecto escalable con el tiempo lo primero es crear dos carpetas:
 se hace una definicion de las rutas que se desean donde el dominio del API sera el mismo para todas:
 --Obtenr el listado de los productos
 --Obtener el detalle del producto
---añadir pruduxtos al carrito de compra
+--añadir pruductos al carrito de compra
+
+## Accediendo a la informacion de la API
+
+para acceder a la informacion de la api utilizamos los slices creados en la carpeta store
