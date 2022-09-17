@@ -17,7 +17,7 @@ export const { setProduct } = productSlice.actions;
 export const getProduct = () => dispatch => {
   dispatch(setIsLoading(true));
   return axios
-    .get("https://front-test-api.herokuapp.com/product/")
+    .get("https://front-test-api.herokuapp.com/api/product/")
     .then(res => dispatch(setProduct(res.data)))
     .finally(() => dispatch(setIsLoading(false)));
 };
