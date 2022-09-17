@@ -24,4 +24,8 @@ se hace una definicion de las rutas que se desean donde el dominio del API sera 
 
 ## Accediendo a la informacion de la API
 
-para acceder a la informacion de la api utilizamos los slices creados en la carpeta store
+para acceder a la informacion de la api utilizamos los slices creados en la carpeta store y tramemos la informacion con el uso de card los cuales se llamara por el react-router-dom
+
+## Revisar api
+
+hacemos una revision del funcionamiento del api http://front-test-api.herokuapp.com/ por medio de Software de Postman y vefiricamos codigos de funcionamiento (200)

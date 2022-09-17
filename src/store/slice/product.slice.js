@@ -22,4 +22,11 @@ export const getProduct = () => dispatch => {
     .finally(() => dispatch(setIsLoading(false)));
 };
 
+export const filterHeadline = () => dispatch => {
+  dispatch(setIsLoading(true));
+  return axios
+    .get("https://front-test-api.herokuapp.com/api/product/id")
+    .then(res => dispatch(setProduct(res.data)))
+    .finally(() => dispatch(setIsLoading(false)));
+};
 export default productSlice.reducer;
