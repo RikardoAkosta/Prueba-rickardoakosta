@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   const filterproduct = () => {
-    alert(search);
+    dispatch(filterHeadline("marca"));
   };
 
   return (
