@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
@@ -27,13 +28,22 @@ const Product = () => {
 
   return (
     <div>
-      <h1>{product.id}</h1>
-      <img src={product.imgUrl} alt="" className="fluid-img" />
-      {productList.map(productItem => (
-        <li onclik={() => navigate(`/product/${productItem.id}`)}>
-          {productItem.id}
-        </li>
-      ))}
+      <Row>
+        <Col>
+          <h1>{product.id}</h1>
+          <img src={product.imgUrl} alt="" className="fluid-img" />
+          {product?.body.map(paragraph => (
+            <p>{paragraph.paragraph}</p>
+          ))}
+        </Col>
+        <Col>
+          {productList.map(productItem => (
+            <li onclik={() => navigate(`/product/${productItem.id}`)}>
+              {productItem.id}
+            </li>
+          ))}
+        </Col>
+      </Row>
     </div>
   );
 };

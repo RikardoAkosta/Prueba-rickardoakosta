@@ -32,7 +32,7 @@ const Home = () => {
     axios
       .get("https://front-test-api.herokuapp.com/api/product")
       .then(res => setCategories(res.data));
-  }, []);
+  }, [dispatch]);
 
   const filterProduct = () => {
     dispatch(filterProductId(search));
