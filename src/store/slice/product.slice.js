@@ -25,7 +25,7 @@ export const getProduct = () => dispatch => {
 export const filterProductId = () => dispatch => {
   dispatch(setIsLoading(true));
   return axios
-    .get(`https://front-test-api.herokuapp.com/api/product?query${query}`)
+    .get(`https://front-test-api.herokuapp.com/api/product?=id`)
     .then(res => dispatch(setProduct(res.data)))
     .finally(() => dispatch(setIsLoading(false)));
 };
@@ -33,7 +33,7 @@ export const filterProductId = () => dispatch => {
 export const filterCategory = id => dispatch => {
   dispatch(setIsLoading(true));
   return axios
-    .get(`https://front-test-api.herokuapp.com/api/product?categorie${id}`)
+    .get(`https://front-test-api.herokuapp.com/api/product?categorie=${id}`)
     .then(res => dispatch(setProduct(res.data)))
     .finally(() => dispatch(setIsLoading(false)));
 };

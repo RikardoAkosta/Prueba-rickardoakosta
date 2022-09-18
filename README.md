@@ -29,3 +29,7 @@ para acceder a la informacion de la api utilizamos los slices creados en la carp
 ## Revisar api
 
 hacemos una revision del funcionamiento del api http://front-test-api.herokuapp.com/ por medio de Software de Postman y vefiricamos codigos de funcionamiento (200)
+
+## filtrado de productos
+
+para el filtrado de productos se crean thunk donde se ejecuta por categoria separado por model y brank
