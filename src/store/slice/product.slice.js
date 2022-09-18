@@ -17,15 +17,23 @@ export const { setProduct } = productSlice.actions;
 export const getProduct = () => dispatch => {
   dispatch(setIsLoading(true));
   return axios
-    .get("https://front-test-api.herokuapp.com/api/product/")
+    .get("https://front-test-api.herokuapp.com/api/product")
     .then(res => dispatch(setProduct(res.data)))
     .finally(() => dispatch(setIsLoading(false)));
 };
 
-export const filterHeadline = () => dispatch => {
+export const filterProductId = () => dispatch => {
   dispatch(setIsLoading(true));
   return axios
-    .get(`https://front-test-api.herokuapp.com/api/product/id${query}`)
+    .get(`https://front-test-api.herokuapp.com/api/product?query${query}`)
+    .then(res => dispatch(setProduct(res.data)))
+    .finally(() => dispatch(setIsLoading(false)));
+};
+
+export const filterCategory = id => dispatch => {
+  dispatch(setIsLoading(true));
+  return axios
+    .get(`https://front-test-api.herokuapp.com/api/product?categorie${id}`)
     .then(res => dispatch(setProduct(res.data)))
     .finally(() => dispatch(setIsLoading(false)));
 };
