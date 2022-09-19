@@ -1,11 +1,28 @@
+import axios from "axios";
 import React from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
+
+  const navigate = useNavigate();
+
   const submit = data => {
-    console.log(data);
+    axios
+      .post("https://front-test-app.herokuapp.com/login/", data)
+      .then(res => {
+        localStorage.setItem("token", res.data.access);
+        navigate("/");
+        alert("Sesión iniciada correctamente");
+      })
+      .catch(error => {
+        console.log(error.response.status);
+        if (error.response.status === 401) {
+          alert("Credenciales incorrectas");
+        }
+      });
   };
   return (
     <div>
@@ -14,7 +31,7 @@ const Login = () => {
           <h1>Login</h1>
           <Form onSubmit={handleSubmit(submit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address = test@gmail.com</Form.Label>
               <Form.Control
                 {...register("email")}
                 type="email"
@@ -26,7 +43,7 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password= test1234</Form.Label>
               <Form.Control
                 {...register("password")}
                 type="password"

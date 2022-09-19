@@ -33,3 +33,4 @@ hacemos una revision del funcionamiento del api http://front-test-api.herokuapp.
 ## filtrado de productos
 
 para el filtrado de productos se crean thunk donde se ejecuta por categoria separado por model y brank
+generamos la barra de navegacion Navba, para asi crear la seccion de login donde se produce el token y se lamacena en el localstorage 
