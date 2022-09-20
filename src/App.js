@@ -15,9 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/cart" element={<Purchases />} />
-
+          <Route path="/purchases" element={<Purchases />} />
           <Route path="/login" element={<Login />} />
+
+          
         </Routes>
       </Container>
     </HashRouter>
