@@ -19,8 +19,12 @@ const Purchases = () => {
 
       <ul>
         {purchases.map(purchases => (
-          <li onClick={() => navigate(`/product/${purchases.product.id}`)}>
-            {purchases.product.id}
+          <li>
+            {purchases.product.map(purchases => (
+              <div onClick={() => navigate(`/product/${purchases.id}`)}>
+                {purchases.product.id}
+              </div>
+            ))}
           </li>
         ))}
       </ul>

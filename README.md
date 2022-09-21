@@ -38,3 +38,7 @@ generamos la barra de navegacion Navba, para asi crear la seccion de login donde
 ## Rutas protegidas 
 al crear el componente de rutas protegidas lo que se quiere es validar el token  para entrar hacer la compra de lo contrario hacer login para eso protegeremos la ruta de purchases o compras 
 
+## Carro de compras
+
+se hace el carro de compras el cual se ejecutaraen la barra de navegacion usando la libreria de bootstrap con esto se puede realizar de forma mas eficiente 
+
