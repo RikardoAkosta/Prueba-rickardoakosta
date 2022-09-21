@@ -2,7 +2,7 @@ import "./App.css";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Home, Product, Purchases, Login } from "./pages";
 import { Container } from "react-bootstrap";
-import { LoadingScreen, NavBar } from "./components";
+import { LoadingScreen, NavBar, ProtectedRoutes } from "./components";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -18,7 +18,9 @@ function App() {
           <Route path="/purchases" element={<Purchases />} />
           <Route path="/login" element={<Login />} />
 
-          
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/purchases" element={<Purchases />} />
+          </Route>
         </Routes>
       </Container>
     </HashRouter>
