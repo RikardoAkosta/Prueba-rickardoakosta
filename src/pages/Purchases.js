@@ -20,7 +20,7 @@ const Purchases = () => {
       <ul>
         {purchases.map(purchases => (
           <li onClick={() => navigate(`/product/${purchases.product.id}`)}>
-            {purchases.product.headline}
+            {purchases.product.id}
           </li>
         ))}
       </ul>

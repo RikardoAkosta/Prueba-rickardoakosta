@@ -34,3 +34,7 @@ hacemos una revision del funcionamiento del api http://front-test-api.herokuapp.
 
 para el filtrado de productos se crean thunk donde se ejecuta por categoria separado por model y brank
 generamos la barra de navegacion Navba, para asi crear la seccion de login donde se produce el token y se lamacena en el localstorage 
+
+## Rutas protegidas 
+al crear el componente de rutas protegidas lo que se quiere es validar el token  para entrar hacer la compra de lo contrario hacer login para eso protegeremos la ruta de purchases o compras 
+
