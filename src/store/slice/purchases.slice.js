@@ -23,16 +23,5 @@ export const getPurchases = () => dispatch => {
     .finally(() => dispatch(setIsLoading(false)));
 };
 
-export const addToFavorites = purchases => dispatch => {
-  dispatch(setIsLoading(true));
-  return axios
-    .post(
-      "https://front-test-app.herokuapp.com/product/add_to_purchases/",
-      purchases,
-      getConfig()
-    )
-    .then(() => dispatch(getPurchases()))
-    .finally(() => dispatch(setIsLoading(false)));
-};
 
 export default purchasesSlice.reducer;

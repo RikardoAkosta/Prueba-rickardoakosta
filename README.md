@@ -40,5 +40,5 @@ al crear el componente de rutas protegidas lo que se quiere es validar el token 
 
 ## Carro de compras
 
-se hace el carro de compras el cual se ejecutaraen la barra de navegacion usando la libreria de bootstrap con esto se puede realizar de forma mas eficiente 
+se hace el carro de compras el cual se ejecutaraen la barra de navegacion usando la libreria de bootstrap con esto se puede realizar de forma mas eficiente el caro tampbien se pondra en una ruta protegida para que el momento de hacer login  no se pierdan los datos
 

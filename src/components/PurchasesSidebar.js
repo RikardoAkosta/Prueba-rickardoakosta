@@ -10,14 +10,14 @@ const PurchasesSidebar = ({ show, handleClose }) => {
 
   const selectProduct = purchases => {
     handleClose();
-    navigate(`/news/${purchases.product.id}`);
+    navigate(`/product/${purchases.product.id}`);
   };
 
   return (
     <div>
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Favorites</Offcanvas.Title>
+          <Offcanvas.Title>Purchases</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ListGroup variant="flush">
