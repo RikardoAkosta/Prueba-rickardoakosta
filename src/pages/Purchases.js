@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { buy } from "../store/slice/cart.slices";
 import { getPurchases } from "../store/slices/purchases.slice";
 
 const Purchases = () => {
@@ -28,7 +29,16 @@ const Purchases = () => {
           </li>
         ))}
       </ul>
+
+      <div>
+        <button onClick= {()=> dispatch(buy())}> 
+          Checkout
+        </button>
+      </div>
     </div>
+
+    
+    
   );
 };
 

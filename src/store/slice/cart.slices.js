@@ -2,6 +2,7 @@ import { getConfig } from "@testing-library/react";
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 import { setIsLoading } from "./isLoading.slice";
+import { getPurchases } from "./purchases.slice";
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -20,7 +21,6 @@ export const getCart = () => dispatch => {
   return axios
     .get("https://front-test-api.herokuapp.com/api/product/cart", getConfig())
     .then(res => dispatch(setCart(res.data.data.cart.product)));
-
 };
 
 export const addToFavorites = favorites => dispatch => {
@@ -31,12 +31,28 @@ export const addToFavorites = favorites => dispatch => {
       favorites,
       getConfig()
     )
-    .then(() => {dispatch(getCart ())
-      alert("Se Añadio el producto al carrito")
-})
-    .catch(error=> console.log(error.respsonse))
+    .then(() => {
+      dispatch(getCart());
+      alert("Se Añadio el producto al carrito");
+    })
+    .catch(error => console.log(error.respsonse))
     .finally(() => dispatch(setIsLoading(false)));
 };
 
+export const buy = () => dispatch => {
+  dispatch(setIsLoading(true));
+  return axios
+    .post(
+      "https://front-test-app.herokuapp.com/product/purchases",
+      [],
+      getConfig()
+    )
+    .then(() => {
+      dispatch(getPurchases());
+      dispatch(setCart([]));
+    })
+
+    .finally(() => dispatch(setIsLoading(false)));
+};
 
 export default cartSlice.reducer;
